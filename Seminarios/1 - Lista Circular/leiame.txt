@@ -1,0 +1,9 @@
+Para compilar o código, abra a pasta onde ele está localizado e, pelo terminal, e execute os seguintes comandos:
+
+gcc -c Circular_List.c -ansi -Wall
+gcc -o main mainList.c Circular_List.o
+
+
+Para rodar o código, use o comando:
+
+./main

@@ -1,0 +1,12 @@
+Instruções de compilação e outras informações:
+
+- O código-fonte utilizado no trabalho é de autoria de Glauber Cintra, conforme comentado no código.
+
+- Para compilar em ambiente Linux (testado em Ubuntu 17.10), basta inserir o seguinte comando:
+	________________________________
+	|- "gcc -o dijkstra dijkstra.c"|
+	|______________________________|
+
+- Para executar o código corretamente, basta inserir os valores correspondentes ao peso das arestas, na ordem informada pelo programa, conforme os exemplos utilizados no relatório.
+
+- Afim de comprovar a eficácia do código, basta comparar a saída do programa dijkstra.c com a última tabela utilizada no relatório.

@@ -1,0 +1,17 @@
+
+Compilador: gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
+SO: Debian GNU/Linux 9 (stretch) 64-bit
+Linguage: C99
+
+Bibliotecas utilizadas na implementação do algoritmo: 
+	string.h
+	stdio.h
+	stdlib.h
+
+Compilação do progrma 
+	$gcc -o main main.c -I .
+
+	OU
+
+	$make
+	$./main

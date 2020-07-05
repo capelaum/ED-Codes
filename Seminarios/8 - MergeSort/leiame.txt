@@ -1,0 +1,22 @@
+UNB - 2018/1
+Estruturas de Dados - Prof. Dr. Marcos Caetano
+
+Seminário - Grupo 8 - Mergesort
+
+ * Compilando o programa:
+
+O programa consiste em apenas um arquivo chamado "mergeSort.c", portanto para compilá-lo basta usar:
+	
+	gcc -o <nome do programa> mergeSort.c -lm
+
+** Deve-se usar ISO C99
+** Deve-se usar " -lm " devido à função "floor()"
+
+ * Execução do programa:
+
+	./<nome do programa>
+
+Primeiramente deve-se entrar com o tamanho do vetor a ser ordenado
+Depois, entrar com o vetor desordenado (manualmente)
+A saída será o vetor ordenado
+Por fim deve-se apertar "Enter" para sair do programa! 

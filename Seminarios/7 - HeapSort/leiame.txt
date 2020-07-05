@@ -1,0 +1,5 @@
+Para compilar o código, acessar a pasta src, e executar:
+gcc -std=c99 -c heap.c
+gcc -std=c99 -o main main.c heap.o
+
+Executar o arquivo main.

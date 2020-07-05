@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "heaps.h": "c",
+        "stdlib.h": "c"
+    }
+}
