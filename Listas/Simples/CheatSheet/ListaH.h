@@ -1,6 +1,11 @@
 #ifndef HEAD_H
 #define HEAD_H
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+
 #define TRUE 1
 #define FALSE 0
 //===========================================================================

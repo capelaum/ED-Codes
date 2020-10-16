@@ -1,4 +1,6 @@
-//ALOCAÇÃO
+#include "ListaH.h"
+
+//ALOCAï¿½ï¿½O
 //===============================================================
 t_lista* aloca_lista (){                                                                             
 	t_lista* ptr = (t_lista*) malloc(sizeof(t_lista));
@@ -94,10 +96,10 @@ int procura_valor(int dado, t_lista* lista){
 //================================================================
 int procura_maior(t_lista* lista){
 
-	t_elemento* maior = lista->primeiro;
+	t_no* maior = lista->primeiro;
 	if(!maior) return FALSE;
 	
-	t_elemento* ptr = lista->primeiro->proximo;
+	t_no* ptr = lista->primeiro->proximo;
 	
 	if(!ptr){
 		printf("\nMaior e unico elemento = %d\n", maior->dado);

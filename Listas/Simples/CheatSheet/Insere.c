@@ -1,4 +1,7 @@
 
+#include "ListaH.h"
+
+
 //INSERIR()
 //===========================================================================
 int inserir_ordenado (int dado, t_lista* lista){
