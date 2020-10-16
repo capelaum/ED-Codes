@@ -2,13 +2,11 @@
 // Fila.c - prof. Caetano
 
 #include "Fila.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /********************************************/
-void inserir_na_fila (t_no* valor, t_fila* fila){
+void inserir_na_fila (ItemType dado, t_fila* fila){
     
-    t_elemento* ptr = aloca_elemento(valor);
+    t_no* ptr = aloca_elemento(dado);
 
     if(esta_vazia(fila)){
         fila->primeiro = ptr;
@@ -17,36 +15,37 @@ void inserir_na_fila (t_no* valor, t_fila* fila){
     }
 
     fila->ultimo = ptr;
+    fila->qtd++;
 
 }//end inserir()
 /********************************************/
-t_no* remover (t_fila* fila){
+ItemType remover (t_fila* fila){
 
-    t_elemento* ptr = fila->primeiro;
+    t_no* ptr = fila->primeiro;
 
     if(esta_vazia(fila)){
-
         printf("Fila está vazia!\n");
         free (fila);
         exit (-1);
     }
 
-    t_no* resultado = ptr->dado;
+    ItemType resultado = ptr->dado;
+
+    printf("Item removido: %d\n", resultado);
 
     if(fila->primeiro == fila->ultimo)
         fila->ultimo = NULL;
     
     fila->primeiro = fila->primeiro->proximo;
-   
+
     free(ptr);
 
     return resultado;
-
 }//end remover()
 /********************************************/
 void libera_fila (t_fila* fila){
 
-    t_elemento* ptr = fila->primeiro;
+    t_no* ptr = fila->primeiro;
 
     if(!esta_vazia(fila)){
 
@@ -62,7 +61,7 @@ void libera_fila (t_fila* fila){
     free (fila);
 }// end apaga_fila()
 /********************************************/
-int esta_vazia (t_fila* fila){
+bool esta_vazia(t_fila* fila){
     return (fila->primeiro == NULL && fila->ultimo == NULL);
 }// end esta_vazia()
 /********************************************/
@@ -72,13 +71,14 @@ t_fila* aloca_fila (){
 
     ptr->primeiro = NULL;
     ptr->ultimo   = NULL;
+    ptr-> qtd = 0;
 
     return ptr;
 }// end aloca_fila()
 /********************************************/
-t_elemento* aloca_elemento (t_no* dado){
+t_no* aloca_elemento (ItemType dado){
 
-    t_elemento* ptr = (t_elemento*) malloc (sizeof(t_elemento));
+    t_no* ptr = (t_no*) malloc (sizeof(int));
 
     ptr->dado    = dado;
     ptr->proximo = NULL;
@@ -87,7 +87,22 @@ t_elemento* aloca_elemento (t_no* dado){
 
 }//end aloca_elemento ()
 /********************************************/
+void imprime_fila(t_fila* fila){
 
+    t_no* ptr = fila->primeiro;
+	
+	if(esta_vazia(fila)){
+		printf("Fila VAZIA!\n");
+		return ;
+	}
+
+	while(ptr) {
+        printf("%d ", ptr->dado);
+        ptr = ptr->proximo;
+    }
+	
+	printf("\n>Tamanho da fila: %d \n", fila->qtd);
+}
 
 
 

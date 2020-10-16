@@ -16,16 +16,14 @@ void imprimeVetor(int vetor[]){
 void bubble_sort(int vetor[TAM]){
 
     //Auxiliares
-    int x, y, aux;
+    int x, y, aux, cont = 0;
 
     //Valor da esquerda sendo analisado
     for(x = 0; x < TAM; x++){
-
         //Valor da direita sendo analisado
         for(y = x + 1; y < TAM; y++){
-
-            imprimeVetor(vetor);
-
+            
+            // printf("x - %d | y = %d", x, y);
             //Confere se precisa fazer a troca
             if(vetor[x] > vetor[y]){
                 aux = vetor[x];
@@ -33,19 +31,19 @@ void bubble_sort(int vetor[TAM]){
                 vetor[y] = aux;
             }
 
+            printf("cont = %d", cont);
+            imprimeVetor(vetor);
+            cont++;
         }
-
     }
-
+    printf("Iteracoes = %d\n", cont);
 }
 
 int main(){
-
     int vetor[TAM] = {10,9,8,7,6,5,4,3,2,1};
 
     bubble_sort(vetor);
 
     imprimeVetor(vetor);
-
     return 0;
 }

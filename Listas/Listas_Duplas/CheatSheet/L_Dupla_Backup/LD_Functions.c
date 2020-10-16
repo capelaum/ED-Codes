@@ -32,9 +32,9 @@ t_elemento* aloca_elemento (char* nome, int ataque, int defesa, int resistencia,
 // aloca a estrutura da lista dupla
 t_lista* aloca_lista(){                                                                             
 	
-    t_lista* ptr = (t_lista*) malloc(sizeof(t_lista));
+	t_lista* ptr = (t_lista*) malloc(sizeof(t_lista));
 	
-    ptr->primeiro = NULL;
+	ptr->primeiro = NULL;
 	ptr->ultimo = NULL;
 	ptr->qtd = 0;
 	
@@ -44,7 +44,7 @@ t_lista* aloca_lista(){
 // remove elemento por elemento e por fim a lista
 void apaga_lista(t_lista* lista){
 	
-    t_elemento* ptr = lista->primeiro;
+	t_elemento* ptr = lista->primeiro;
 	
 	if(!esta_vazia(lista)) {
 		
@@ -71,8 +71,8 @@ int esta_vazia(t_lista* lista){
 //===================================================================================================//IMPRIME
 void imprime_lista(t_lista* lista){
 	
-    int i;
-    t_elemento* ptr = lista->primeiro;
+	int i;
+	t_elemento* ptr = lista->primeiro;
 	
 	if(esta_vazia(lista)){
 		printf("LISTA VAZIA!\n");
@@ -83,11 +83,11 @@ void imprime_lista(t_lista* lista){
 	
 	for(i=0; i<lista->qtd; i++,ptr = ptr->proximo){
 		
-        printf("Time %d: %s -> ", i+1, ptr->team->nome);
-        printf("ataque: %d, ", ptr->team->ataque);
-        printf("defesa: %d, ", ptr->team->defesa);
-        printf("resistencia: %d, ", ptr->team->resistencia);
-        printf("velocidade: %d. \n", ptr->team->velocidade);
+		printf("Time %d: %s -> ", i+1, ptr->team->nome);
+		printf("ataque: %d, ", ptr->team->ataque);
+		printf("defesa: %d, ", ptr->team->defesa);
+		printf("resistencia: %d, ", ptr->team->resistencia);
+		printf("velocidade: %d. \n", ptr->team->velocidade);
 	}
 	
 	printf("\n>Numero de times: %d \n", lista->qtd);
@@ -96,7 +96,7 @@ void imprime_lista(t_lista* lista){
 // FINAL
 int inserir_final (char* nome, int ataque, int defesa, int resistencia, int velocidade, t_lista* lista){
 	
-    if(!lista)	return false;
+	if(!lista)	return false;
 	
 	t_elemento* ptr = aloca_elemento(nome, ataque, defesa, resistencia, velocidade);
 	

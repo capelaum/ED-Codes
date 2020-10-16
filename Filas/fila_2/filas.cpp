@@ -13,14 +13,19 @@ void imprime_vetor(int vetor[TAM], int tamanho){
     cout << "\n";
 
      //Imprime o vetor
-    for(cont = 0; cont < TAM; cont++){
+    for(cont = 0; cont < sizeof(*vetor); cont++){
         cout << vetor[cont] << " - ";
     }
 }
 
-void fila_construtor(int *frente, int *tras){
+int* fila_construtor(int tam, int *frente, int *tras){
+
+    int* fila = (int*) malloc(tam * sizeof(int));
+
     *frente = 0;
     *tras = -1;
+
+    return fila;
 }
 
 bool fila_vazia(int frente, int tras){
@@ -32,7 +37,6 @@ bool fila_vazia(int frente, int tras){
 }
 
 bool fila_cheia(int tras){
-
     if(tras == TAM -1){
         return true;
     }else{
@@ -43,7 +47,7 @@ bool fila_cheia(int tras){
 void fila_enfileirar(int fila[TAM], int valor, int *tras){
 
     if(fila_cheia(*tras)){
-        cout << "Fila cheia!";
+        cout << "Fila cheia!\n";
     }else{
         *tras = *tras + 1;
         fila[*tras] = valor;
@@ -54,9 +58,9 @@ void fila_enfileirar(int fila[TAM], int valor, int *tras){
 void fila_desenfileirar(int fila[TAM], int *frente, int tras){
 
     if(fila_vazia(*frente, tras)){
-        cout << "Impossivel desenfileirar uma lista vazia";
+        cout << "Impossivel desenfileirar uma lista vazia\n";
     }else{
-        cout << "O valor " << fila[*frente] << " foi removido";
+        cout << "O valor " << fila[*frente] << " foi removido\n";
         fila[*frente] = 0;
         *frente = *frente + 1;
     }
@@ -69,20 +73,22 @@ int fila_tamanho(int tras, int frente){
 
 int main(){
 
-    int fila[TAM] = {0,0,0,0,0,0,0,0,0,0};
+    int tam = 30;
     int frente,tras;
     int valor;
 
-    fila_construtor(&frente, &tras);
+    int *fila = fila_construtor(tam, &frente, &tras);
 
     fila_enfileirar(fila, 5, &tras);
     fila_enfileirar(fila, 7, &tras);
 
-    fila_desenfileirar(fila,&frente, tras);
-    fila_desenfileirar(fila,&frente, tras);
-    fila_desenfileirar(fila,&frente, tras);
+    fila_desenfileirar(fila, &frente, tras);
+    fila_desenfileirar(fila, &frente, tras);
+    fila_desenfileirar(fila, &frente, tras);
 
     fila_enfileirar(fila, 8, &tras);
+
+    printf("Tamanho da lista: %d\n", fila_tamanho(tras, frente));
 
     imprime_vetor(fila, fila_tamanho(tras,frente)) ;
 
