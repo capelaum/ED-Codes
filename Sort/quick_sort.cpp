@@ -11,9 +11,7 @@ void imprimeVetor(int vetor[])
     int i;
     cout << "\n";
     for (i = 0; i < TAM; i++)
-    {
         cout << " |" << vetor[i] << "| ";
-    }
 }
 
 void quick_sort(int vetor[TAM], int inicio, int fim)
@@ -30,14 +28,10 @@ void quick_sort(int vetor[TAM], int inicio, int fim)
     while (dir > esq)
     {
         while (vetor[esq] < pivo)
-        {
             esq = esq + 1;
-        }
 
         while (vetor[dir] > pivo)
-        {
             dir = dir - 1;
-        }
 
         if (esq <= dir)
         {
@@ -55,13 +49,9 @@ void quick_sort(int vetor[TAM], int inicio, int fim)
 
     // Recursao para continuar ordenando
     if (inicio < dir)
-    {
         quick_sort(vetor, inicio, dir);
-    }
     else if (esq < fim)
-    {
         quick_sort(vetor, esq, fim);
-    }
 }
 
 int main()
